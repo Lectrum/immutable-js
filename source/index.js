@@ -1,1 +1,1 @@
-import './immutable/1';
+import './app';
