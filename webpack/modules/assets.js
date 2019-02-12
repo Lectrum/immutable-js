@@ -2,7 +2,6 @@
 import { source, statics } from '../paths';
 
 // Plugins
-import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import HtmlWebpackTemplate from 'html-webpack-template';
 
@@ -18,7 +17,7 @@ export const loadFonts = () => ({
                         name: 'fonts/[name].[hash:5].[ext]',
                     },
                 },
-            }
+            },
         ],
     },
 });
@@ -37,20 +36,9 @@ export const loadImages = () => ({
                         name:     'images/[name].[hash:5].[ext]',
                     },
                 },
-            }
+            },
         ],
     },
-});
-
-export const setupFavicon = () => ({
-    plugins: [
-        new FaviconsWebpackPlugin({
-            logo:            './static/favicon/favicon.svg',
-            prefix:          'images/favicon/icon-[hash]',
-            statsFilename:   'iconstats-[hash].json',
-            persistentCache: true,
-        })
-    ],
 });
 
 export const setupHtml = () => ({
@@ -63,10 +51,11 @@ export const setupHtml = () => ({
             meta:     [
                 {
                     name:    'viewport',
-                    content: 'user-scalable=no, width=device-width, initial-scale=1',
-                }
+                    content:
+                        'user-scalable=no, width=device-width, initial-scale=1',
+                },
             ],
-            appMountIds: ['app', 'spinner'],
-        })
+            appMountIds: [ 'app', 'spinner' ],
+        }),
     ],
 });
