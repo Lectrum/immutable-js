@@ -8,7 +8,7 @@ import {
     loadImages,
     setupHtml,
     setupContextReplacement,
-    initializeEnvVariables
+    initializeEnvVariables,
 } from '../modules';
 
 // Instruments
@@ -16,7 +16,6 @@ import merge from 'webpack-merge';
 
 export const generateCommonConfiguration = () => {
     const BUILD_ENV = process.env.BUILD_ENV;
-    const IS_DEPLOYING_TO_GITHUB_PAGES = process.env.DEPLOY_TARGET === 'github-pages';
 
     return merge(
         // Loaders
@@ -38,15 +37,23 @@ export const generateCommonConfiguration = () => {
             },
             output: {
                 path:       build,
-                publicPath: IS_DEPLOYING_TO_GITHUB_PAGES ? `/${REPOSITORY_NAME}/` : '/',
+                publicPath: '/',
             },
             resolve: {
-                extensions: ['.mjs', '.js', '.json', '.css', '.m.css', '.png', '.jpg'],
-                modules:    [source, 'node_modules'],
+                extensions: [
+                    '.mjs',
+                    '.js',
+                    '.json',
+                    '.css',
+                    '.m.css',
+                    '.png',
+                    '.jpg',
+                ],
+                modules: [ source, 'node_modules' ],
             },
             optimization: {
                 nodeEnv: process.env.NODE_ENV,
             },
-        }
+        },
     );
 };
