@@ -1,4 +1,4 @@
-export { loadFonts, loadImages, setupHtml, setupFavicon } from './assets';
+export { loadFonts, loadImages, setupHtml } from './assets';
 export { loadPostCSS, loadDevelopmentCss, loadProductionCss } from './styles';
 export { loadJavaScript } from './code';
 export {
@@ -7,5 +7,5 @@ export {
     setupBuildAnalysis,
     setupStyledReporting,
     initializeEnvVariables,
-    cleanBuildDirectory
+    cleanBuildDirectory,
 } from './utils';

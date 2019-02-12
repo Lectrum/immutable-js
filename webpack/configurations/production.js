@@ -5,33 +5,30 @@ import { generateCommonConfiguration } from './common';
 import {
     loadProductionCss,
     setupBuildAnalysis,
-    setupFavicon,
-    cleanBuildDirectory
+    cleanBuildDirectory,
 } from '../modules';
 
 // Instruments
 import merge from 'webpack-merge';
 
-export const generateProductionConfiguration = () =>
-    merge(
-        // Generator
-        generateCommonConfiguration(),
+export const generateProductionConfiguration = () => merge(
+    // Generator
+    generateCommonConfiguration(),
 
-        // Loaders
-        loadProductionCss(),
-        setupFavicon(),
+    // Loaders
+    loadProductionCss(),
 
-        // Plugins
-        cleanBuildDirectory(),
-        setupBuildAnalysis(),
-        {
-            mode:   'production',
-            output: {
-                filename: 'js/[name].[chunkhash:5].js',
-            },
-            devtool:      'source-map',
-            optimization: {
-                minimize: false,
-            },
+    // Plugins
+    cleanBuildDirectory(),
+    setupBuildAnalysis(),
+    {
+        mode:   'production',
+        output: {
+            filename: 'js/[name].[chunkhash:5].js',
         },
-    );
+        devtool:      'source-map',
+        optimization: {
+            minimize: false,
+        },
+    },
+);
