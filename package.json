@@ -1,6 +1,6 @@
 {
     "name": "introduction-to-immutable",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "author": "Andrey Prisniak <aprisniak@lectrum.io>",
     "private": true,
     "scripts": {
