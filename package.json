@@ -1,7 +1,7 @@
 {
     "name": "introduction-to-immutable",
-    "version": "0.0.1",
-    "author": "Dima Vakatsiienko <dvakatsiienko@lectrum.io>",
+    "version": "0.0.2",
+    "author": "Andrey Prisniak <aprisniak@lectrum.io>",
     "private": true,
     "scripts": {
         "start": "cross-env-shell NODE_ENV=development BUILD_ENV=development webpack-dev-server --config=\"./webpack/webpack.config.babel.js\" --env development",
@@ -16,10 +16,10 @@
         "classnames": "2.2.6",
         "faker": "4.1.0",
         "immutable": "4.0.0-rc.12",
-        "moment": "2.23.0",
-        "react": "16.7.0",
-        "react-dom": "16.7.0",
-        "react-flip-move": "3.0.3",
+        "moment": "2.26.0",
+        "react": "16.13.1",
+        "react-dom": "16.13.1",
+        "react-flip-move": "3.0.4",
         "reset-css": "4.0.1"
     },
     "devDependencies": {
